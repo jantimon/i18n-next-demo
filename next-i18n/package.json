@@ -1,0 +1,11 @@
+{
+    "name": "next-i18n",
+    "type": "module",
+    "sideEffects": false,
+    "dependencies": {
+        "@galaxus/swc-plugin-translation-importer": "^0.3.1",
+        "@messageformat/core": "^3.2.0"
+    },
+    "module": "index.mjs",
+    "types": "index.d.ts"
+}

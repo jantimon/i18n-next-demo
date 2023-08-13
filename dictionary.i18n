@@ -1,0 +1,33 @@
+{
+    "a react server components compatible i18n demo": {
+        "de-CH": "Eine React Server Components kompatibele i18n Demo",
+        "en-US": "A React Server Components compatible i18n demo",
+        "fr-CH": "Une démo i18n compatible avec React Server Components",
+        "it-CH": "Una demo i18n compatibile con React Server Components",
+        "nl-NL": "Een React Server Components compatibele i18n demo"
+    },
+
+    "Welcome {name}": {
+        "de-CH": "Willkommen zu {name}!",
+        "en-US": "Welcome to {name}!",
+        "fr-CH": "Bienvenue à {name}!",
+        "it-CH": "Benvenuto a {name}!",
+        "nl-NL": "Welkom bij {name}!"
+    },
+
+    "messages": {
+        "de-CH": "Du hast {count, plural, one {# neue Nachricht} other {# neue Nachrichten}}",
+        "en-US": "You have {count, plural, one {# new message} other {# new messages}}",
+        "fr-CH": "Vous avez {count, plural, one {# nouveau message} other {# nouveaux messages}}",
+        "it-CH": "Hai {count, plural, one {# nuovo messaggio} other {# nuovi messaggi}}",
+        "nl-NL": "Je hebt {count, plural, one {# nieuw bericht} other {# nieuwe berichten}}"
+    },
+
+    "about us": {
+        "de-CH": "Über uns",
+        "en-US": "About us",
+        "fr-CH": "À propos de nous",
+        "it-CH": "Riguardo a noi",
+        "nl-NL": "Over ons"
+    }
+}
