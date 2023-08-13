@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## i18n-next-demo
 
-## Getting Started
+This POC shows how translations can be automatically split into chunks and loaded on demand.
 
-First, run the development server:
+### How to run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### How it works
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The `dictionary.i18n` file contains all the translations for the app. It is a simple JSON file with a key-value structure:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```json
+ {
+    "Welcome {name}": {
+        "de-CH": "Willkommen zu {name}!",
+        "en-US": "Welcome to {name}!",
+        "fr-CH": "Bienvenue à {name}!",
+        "it-CH": "Benvenuto a {name}!",
+        "nl-NL": "Welkom bij {name}!"
+    }
+ }
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The custom SWC plugin @galaxus/swc-plugin-translation-importer searches for `__` calls in the source code and replaces them with a direct import to the transaltion. The import will be processed by a webpack loader to split the translations automatically.
 
-## Learn More
+```js
+__('greeting');
 
-To learn more about Next.js, take a look at the following resources:
+// becomes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+import __i18n_FEE456 from './dictionary.i18n?__i18n_FEE456';
+__(__i18n_FEE456)
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This will allow webpack to split the translations into chunks and load them on demand.  
+During optimization webpack will even inline the translation if it is used only once:
 
-## Deploy on Vercel
+```js
+__(['Welcome', 'Willkommen']);
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Advantages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- no manual splitting of translations
+- splitting per page
+- lazy loaded js chunks automatically lazy load their translations
+- translation keys are removed during build time
+- translations used in RSC are not transferred to the client
+- compiles ICU messages to JS during build time
+
+### Inline Code Example
+
+![inline code example](https://raw.githubusercontent.com/jantimon/i18n-next-demo/master/inline.webp)

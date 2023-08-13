@@ -29,5 +29,13 @@
         "fr-CH": "À propos de nous",
         "it-CH": "Riguardo a noi",
         "nl-NL": "Over ons"
+    },
+
+    "client component": {
+        "de-CH": "Client Komponente",
+        "en-US": "Client component",
+        "fr-CH": "Composant client",
+        "it-CH": "Componente client",
+        "nl-NL": "Client component"
     }
 }
