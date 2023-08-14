@@ -1,6 +1,6 @@
 import { useTranslate } from "next-i18n";
-import { Dynamic } from "./dynamic";
 import Link from "next/link";
+import { Messages } from "./messages";
 
 export async function generateStaticParams() {
   return [
@@ -15,7 +15,7 @@ export default function Home({ params: {lang = "en-US"}}) {
     <main>
       <h1>{__("Welcome {name}", {name: "Next.js"})}</h1>
 
-      <Dynamic />
+      <Messages />
 
       <p>{__("a react server components compatible i18n demo")}</p>
 
