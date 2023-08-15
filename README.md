@@ -25,7 +25,7 @@ The `dictionary.i18n` file contains all the translations for the app. It is a si
  }
 ```
 
-The custom SWC plugin @galaxus/swc-plugin-translation-importer searches for `__` calls in the source code and replaces them with a direct import to the transaltion. The import will be processed by a webpack loader to split the translations automatically.
+The custom SWC plugin @galaxus/swc-plugin-translation-importer searches for `__` calls in the source code and replaces them with a direct import to the translation. The import will be processed by a webpack loader to split the translations automatically.
 
 ```js
 __('greeting');
@@ -37,7 +37,7 @@ __(__i18n_FEE456)
 ```
 
 This will allow webpack to split the translations into chunks and load them on demand.  
-During optimization webpack will even inline the translation if it is used only once:
+During optimization, webpack will even inline the translation if it is used only once:
 
 ```js
 __(['Welcome', 'Willkommen']);
