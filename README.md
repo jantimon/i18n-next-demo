@@ -46,6 +46,7 @@ __(['Welcome', 'Willkommen']);
 ### Advantages
 
 - no manual splitting of translations
+- automatic unused translation removal
 - splitting per page
 - lazy loaded js chunks automatically lazy load their translations
 - translation keys are removed during build time
@@ -54,4 +55,6 @@ __(['Welcome', 'Willkommen']);
 
 ### Inline Code Example
 
-![inline code example](https://raw.githubusercontent.com/jantimon/i18n-next-demo/master/inline.webp)
+In the following example you can see that only the translations without any translation keys are transferred to the client:
+
+![inline code example](https://raw.githubusercontent.com/jantimon/i18n-next-demo/master/i18n-demo.jpg)
