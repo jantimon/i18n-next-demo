@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslate } from "next-i18n";
 import { useParams } from "next/navigation";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { useTranslate } from "next-i18n";
 import { useParams } from 'next/navigation'

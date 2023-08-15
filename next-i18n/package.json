@@ -3,7 +3,7 @@
     "type": "module",
     "sideEffects": false,
     "dependencies": {
-        "@galaxus/swc-plugin-translation-importer": "0.4.0-preview.0",
+        "@galaxus/swc-plugin-translation-importer": "0.4.0-preview.1",
         "@messageformat/core": "^3.2.0"
     },
     "module": "index.mjs",
