@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useTranslate } from "next-i18n/context";
-import { useParams } from "next/navigation";
 
 export const Messages = () => {
   const [count, setCount] = useState(0);
